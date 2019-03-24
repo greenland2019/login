@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eplant.controller.LoginController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@../../images/03579d505ef2fc2.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="253.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+      <TextField fx:id="email" layoutX="300.0" layoutY="118.0" prefHeight="25.0" prefWidth="205.0" />
+      <Text layoutX="213.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe" />
+      <PasswordField layoutX="300.0" layoutY="175.0" prefHeight="25.0" prefWidth="205.0" fx:id="mdp"/>
+      <Button fx:id="connect" layoutX="329.0" layoutY="240.0" mnemonicParsing="false" text="Se connecter" />
+      <Button layoutX="420.0" layoutY="240.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Inscription" fx:id="inscription"/>
+      <ImageView fitHeight="176.0" fitWidth="178.0" layoutY="-45.0">
+         <image>
+            <Image url="@../../images/logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
