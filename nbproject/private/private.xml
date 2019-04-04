@@ -3,9 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Eplants/src/eplants/main/Eplants.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Eplants/src/eplants.controller/LoginController.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Eplants/src/eplants/view/Login.fxml</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/controller/CommunauteController.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/view/Accueil.fxml</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/view/FXML.fxml</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/entities/ListEvents.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/services/EvenementService.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/view/Communaute.fxml</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/services/PromotionService.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/main/Eplants.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/controller/PromotionController.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/controller/AccueilController.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/view/Promotion.fxml</file>
         </group>
     </open-files>
 </project-private>

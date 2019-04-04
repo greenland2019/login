@@ -5,6 +5,8 @@
  */
 package eplant.entities;
 
+import javafx.beans.property.SimpleStringProperty;
+
 /**
  *
  * @author Eplants
@@ -12,8 +14,8 @@ package eplant.entities;
 public class Personne {
     
     private int id;
-    private String nom;
-    private String prenom;
+    private SimpleStringProperty nom;
+    private SimpleStringProperty prenom;
     private String email;
     private String password;
     private int numtel;
@@ -25,8 +27,8 @@ public class Personne {
     }
 
     public Personne(String nom, String prenom, String email, String password, int numtel, String adresse, String role, String zone) {
-        this.nom = nom;
-        this.prenom = prenom;
+        this.nom = new SimpleStringProperty(nom);
+        this.prenom = new SimpleStringProperty(prenom);
         this.email = email;
         this.password = password;
         this.numtel = numtel;
@@ -44,19 +46,19 @@ public class Personne {
     }
 
     public String getNom() {
-        return nom;
+        return nom.get();
     }
 
     public void setNom(String nom) {
-        this.nom = nom;
+        this.nom = new SimpleStringProperty(nom);
     }
 
     public String getPrenom() {
-        return prenom;
+        return prenom.get();
     }
 
     public void setPrenom(String prenom) {
-        this.prenom = prenom;
+        this.prenom = new SimpleStringProperty(prenom);
     }
 
     public String getEmail() {
@@ -78,7 +80,7 @@ public class Personne {
     public int getNumtel() {
         return numtel;
     }
-
+     
     public void setNumtel(int numtel) {
         this.numtel = numtel;
     }
@@ -108,5 +110,10 @@ public class Personne {
     }
     
     
-    
+      public SimpleStringProperty getNomProperty(){
+        return nom;
+    }
+    public SimpleStringProperty getPrenomProperty(){
+        return prenom;
+    }
 }

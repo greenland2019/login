@@ -5,6 +5,7 @@
  */
 package eplant.controller;
 
+import eplant.config.UserSession;
 import eplant.entities.Personne;
 import eplant.services.PersonneService;
 import java.io.IOException;
@@ -96,8 +97,12 @@ public class SigninController implements Initializable {
                     p.setNom(nom.getText());
                     p.setNumtel(Integer.valueOf(mobile.getText()));
                     PersonneService s1 = new PersonneService();
+                    
+                    if(!s1.check(p)){
                     s1.insert(p);
                      Parent page2;
+                        UserSession session = UserSession.getInstace(p.getEmail(), p.getRole());
+           
                         try {
                             page2 = FXMLLoader.load(getClass().getResource("/eplant/view/Accueil.fxml"));
                              Scene scene = new Scene(page2);
@@ -107,7 +112,17 @@ public class SigninController implements Initializable {
                         } catch (IOException ex) {
                             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
                         }
-                        }
+                     }
+                    
+                    else{
+                     Alert alert = new Alert(Alert.AlertType.WARNING);
+
+                        alert.setTitle("Erreur");
+        alert.setHeaderText(null);
+        alert.setContentText("Client dejà existant!");
+        alert.show();
+                    }
+            }
         });
         
          connect.setOnAction((event) -> {

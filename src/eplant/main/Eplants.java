@@ -26,9 +26,11 @@ public class Eplants extends Application {
        // this.primaryStage.setTitle("Hello World");
         
         parentPage = FXMLLoader.load(getClass().getResource("/eplant/view/Login.fxml"));
+        
         Scene scene = new Scene(parentPage);
         this.primaryStage.setScene(scene);
         this.primaryStage.show();
+        
 
     }
 

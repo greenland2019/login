@@ -18,6 +18,7 @@ public interface IEplants<T> {
     public boolean check(T o);
     public List<T> displayAll();
     public T displayById(int id);
+    public T SearchByMail(String mail);
     
-    public boolean update(T os);
+    public void update(T os);
 }

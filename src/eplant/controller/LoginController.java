@@ -5,6 +5,7 @@
  */
 package eplant.controller;
 
+import eplant.config.UserSession;
 import eplant.entities.Personne;
 import eplant.services.PersonneService;
 import java.io.IOException;
@@ -66,9 +67,11 @@ public class LoginController implements Initializable {
                     p.setEmail(email.getText());
                     p.setPassword(mdp.getText());
                     PersonneService s1 = new PersonneService();
-                    if(s1.check(p)==true){
+                    if(s1.check(p)==true ){
                      Parent page2;
+                     UserSession session = UserSession.getInstace(p.getEmail(), p.getRole());
                         try {
+                            
                             page2 = FXMLLoader.load(getClass().getResource("/eplant/view/Accueil.fxml"));
                              Scene scene = new Scene(page2);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -82,7 +85,8 @@ public class LoginController implements Initializable {
 //                controller.setListData(new ListData());
                
                     }
-                    else{
+                    else if(s1.check(p)==false)
+                    {
                     Alert alert = new Alert(AlertType.ERROR);
 
                         alert.setTitle("Erreur");
