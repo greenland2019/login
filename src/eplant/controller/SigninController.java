@@ -17,6 +17,7 @@ import java.util.regex.Pattern;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -24,6 +25,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -103,6 +105,10 @@ public class SigninController implements Initializable {
                      Parent page2;
                         UserSession session = UserSession.getInstace(p.getEmail(), p.getRole());
            
+                        if("client".equalsIgnoreCase(session.getRole())){
+                        Notifications.create().title("Notification").
+                                text("Bienvenu "+ p.getPrenom()).position(Pos.TOP_CENTER).showInformation();
+                      }
                         try {
                             page2 = FXMLLoader.load(getClass().getResource("/eplant/view/Accueil.fxml"));
                              Scene scene = new Scene(page2);

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="472.0" prefWidth="648.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eplant.controller.StatController">
+   <children>
+      <BarChart fx:id="stat" layoutX="63.0" layoutY="36.0" title="Vente/M">
+        <xAxis>
+          <CategoryAxis label="Mois" side="BOTTOM" fx:id="x" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="y" label="Vente" side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <Button fx:id="back" layoutX="549.0" layoutY="2.0" mnemonicParsing="false" text="Accueil">
+         <graphic>
+            <ImageView fitHeight="17.0" fitWidth="27.0">
+               <image>
+                  <Image url="@../../images/back-button-hi.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

@@ -144,7 +144,7 @@ java.sql.Date date = java.sql.Date.valueOf(o.getDate_event());
    }
     
      public ObservableList<Evenement> searchEvent(String search) {
- String req="select * from evenement where description like '%"+search+"%' or date_event  like '%"+search+"%'"; 
+ String req="select * from evenement where (description like '%"+search+"%' or date_event  like '%"+search+"%' or type  like '%"+search+"%') and date_event>=CURRENT_TIME order by date_event asc"; 
 ObservableList<Evenement> list=FXCollections.observableArrayList();         
         try {
             ResultSet rs=ste.executeQuery(req);
@@ -280,7 +280,7 @@ para.add(text);
         try {
             Image img;
          try {
-             img = Image.getInstance("C:/Users/HP/Documents/NetBeansProjects/Eplants/src/images/logo.png");
+             img = Image.getInstance("C:/Users/HP/Desktop/Eplants/src/images/logo.png");
         img.scaleAbsolute(125, 125);
          document.add(img);
          } catch (BadElementException ex) {
@@ -296,4 +296,25 @@ para.add(text);
         }
 document.close();
       }
+      
+      public Evenement NextEvent() {
+ String req="select * from evenement where date_event>CURRENT_TIME order by date_event asc limit 1"; 
+                Evenement p=new Evenement();
+        try {
+            ResultSet rs=ste.executeQuery(req);
+            while(rs.next()){
+                p.setId(rs.getInt(1));
+                 p.setDescription(rs.getString(6));
+                p.setDate_event(rs.getDate(2).toString());
+                p.setAffiche(rs.getString(7));
+                p.setLieu(rs.getString(5));
+                p.setType(rs.getString(3));
+                p.setNb_participants(rs.getInt(4));
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(EvenementService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return p;    
+    }
 }

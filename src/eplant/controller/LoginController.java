@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -24,6 +25,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -70,6 +72,11 @@ public class LoginController implements Initializable {
                     if(s1.check(p)==true ){
                      Parent page2;
                      UserSession session = UserSession.getInstace(p.getEmail(), p.getRole());
+                     if("client".equalsIgnoreCase(session.getRole())){
+                        Notifications.create().title("Notification").
+                                text("Bienvenu "+ s1.SearchByMail(p.getEmail()).getPrenom()).
+                                darkStyle().position(Pos.TOP_CENTER).showInformation();
+                      }
                         try {
                             
                             page2 = FXMLLoader.load(getClass().getResource("/eplant/view/Accueil.fxml"));

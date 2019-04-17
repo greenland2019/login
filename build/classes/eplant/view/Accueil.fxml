@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="ap" id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eplant.controller.AccueilController">
+<AnchorPane id="AnchorPane" fx:id="ap" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eplant.controller.AccueilController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0">
          <image>
@@ -19,8 +19,8 @@
             <Image url="@../../images/logo.png" />
          </image>
       </ImageView>
-      <Button layoutX="23.0" layoutY="105.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="97.0" text="Produits" />
-      <Button fx:id="deconnect" layoutX="524.0" layoutY="105.0" minWidth="26.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="26.0">
+      <Button fx:id="produits" layoutX="23.0" layoutY="105.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="97.0" text="Produits" />
+      <Button fx:id="deconnect" layoutX="560.0" layoutY="105.0" minWidth="26.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="26.0">
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="30.0">
                <image>
@@ -28,19 +28,19 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button layoutX="339.0" layoutY="105.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="97.0" text="Panier" />
       <Button fx:id="com" layoutX="229.0" layoutY="105.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="103.0" text="Communauté" />
-      <Button layoutX="126.0" layoutY="105.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="97.0" text="S.A.V" />
+      <Button fx:id="savbut" layoutX="126.0" layoutY="105.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="97.0" text="S.A.V" />
       <Text fx:id="login" layoutX="47.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="127.00000011920929" />
       <ImageView fitHeight="26.0" fitWidth="24.0" layoutX="14.0" layoutY="52.0">
          <image>
             <Image url="@../../images/user-blue.png" />
          </image>
       </ImageView>
-      <Pane layoutX="441.0" layoutY="166.0" prefHeight="211.0" prefWidth="147.0">
+      <Pane fx:id="sidebar" layoutX="441.0" layoutY="166.0" prefHeight="211.0" prefWidth="147.0">
          <children>
             <Button fx:id="promo" layoutX="-2.0" layoutY="7.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="147.0" text="Promotions en cours" />
          </children>
       </Pane>
+      <Button fx:id="livraisonbut" layoutX="229.0" layoutY="166.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="103.0" text="Mes livraisons" />
    </children>
 </AnchorPane>

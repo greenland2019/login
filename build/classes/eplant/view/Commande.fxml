@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eplant.controller.CommandeController">
+   <children>
+      <TableView fx:id="commandetable" layoutX="48.0" layoutY="56.0" prefHeight="200.0" prefWidth="227.0">
+        <columns>
+          <TableColumn fx:id="produit" prefWidth="75.0" text="Produit" />
+          <TableColumn fx:id="qte" prefWidth="75.0" text="Quantite" />
+            <TableColumn fx:id="prix" prefWidth="75.0" text="Prix" />
+        </columns>
+      </TableView>
+      <TextField fx:id="addresse" layoutX="334.0" layoutY="123.0" />
+      <ComboBox fx:id="zone" layoutX="334.0" layoutY="200.0" prefWidth="150.0" promptText="Zone" />
+      <Label layoutX="333.0" layoutY="56.0" text="Information neccessaire pour la livraison" />
+      <Label layoutX="333.0" layoutY="92.0" text="adresse" />
+      <Label layoutX="333.0" layoutY="167.0" text="Zone" />
+      <Button fx:id="valider" layoutX="465.0" layoutY="305.0" mnemonicParsing="false" text="Valider" />
+      <Label layoutX="185.0" layoutY="256.0" prefHeight="25.0" prefWidth="41.0" text="Total" />
+      <Label layoutX="152.0" layoutY="281.0" prefHeight="17.0" prefWidth="74.0" text="Frais Livraison" />
+      <Label layoutX="174.0" layoutY="309.0" prefHeight="17.0" prefWidth="53.0" text="Prix total" />
+      <Label fx:id="total" layoutX="237.0" layoutY="260.0" />
+      <Label layoutX="237.0" layoutY="281.0" text="50 DT" />
+      <Label fx:id="ptotal" layoutX="237.0" layoutY="309.0" />
+      <Button fx:id="back" layoutX="505.0" layoutY="2.0" mnemonicParsing="false" text="Accueil">
+         <graphic>
+            <ImageView fitHeight="17.0" fitWidth="27.0">
+               <image>
+                  <Image url="@../../images/back-button-hi.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

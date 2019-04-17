@@ -19,6 +19,7 @@ public class ListEvents {
       private ObservableList<Evenement> events1= FXCollections.observableArrayList();
       private String search="";
 
+
     public String getSearch() {
         return search;
     }

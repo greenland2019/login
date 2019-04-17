@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -25,6 +26,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -39,6 +41,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -111,6 +114,27 @@ public class PromotionController implements Initializable {
                 getValue().getReduction()));    
         
           promoTable.setOnMouseClicked(event->{
+              int jj= 0;
+          SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+                 Date dateevent = null;
+                 Date datenow = null;
+                     try {
+                          dateevent = sdf1.parse(String.valueOf(promotions
+                .get(promoTable.getSelectionModel().getSelectedIndex())
+                .getDate_fin()));
+                          datenow = sdf1.parse(sdf1.format(new Date()));
+                          Calendar cal1 = Calendar.getInstance();
+                          Calendar cal2 = Calendar.getInstance();
+                          cal1.setTime(dateevent);
+                          cal2.setTime(datenow);
+                          jj = cal1.get(Calendar.DAY_OF_YEAR)-cal2.get(Calendar.DAY_OF_YEAR);
+                     } catch (ParseException ex) {
+                         Logger.getLogger(CommunauteController.class.getName()).log(Level.SEVERE, null, ex);
+                     }
+              
+               Notifications.create().title("Notification").
+                                text("Promotion révolue dans "+ jj+" jours").position(Pos.TOP_CENTER).showInformation();
+              
               int oldvalue= promotions
                 .get(promoTable.getSelectionModel().getSelectedIndex())
                 .getReduction();
@@ -131,7 +155,7 @@ public class PromotionController implements Initializable {
                 .get(promoTable.getSelectionModel().getSelectedIndex())
                 .getDate_fin()));
         
-         File file = new File("C:/Users/HP/Documents/NetBeansProjects/Eplants/src/images/"+prod.getImg());
+         File file = new File("C:/Users/HP/Desktop/Eplants/src/images/"+prod.getImg());
           Image image = new Image(file.toURI().toString());
         imgprod.setImage(image);
         
@@ -176,7 +200,17 @@ public class PromotionController implements Initializable {
 
                         alert.setTitle("Erreur");
         alert.setHeaderText(null);
-        alert.setContentText("Veuillez remplir tous les champs!");
+        alert.setContentText("Date invalide!");
+        alert.show();
+
+              }
+              
+              if(promo.getReduction()>100){
+                     Alert alert = new Alert(Alert.AlertType.WARNING);
+
+                        alert.setTitle("Erreur");
+        alert.setHeaderText(null);
+        alert.setContentText("Promotion maximale de 100 %!");
         alert.show();
 
               }
@@ -244,7 +278,7 @@ public class PromotionController implements Initializable {
 
                         alert.setTitle("Confirmation");
         alert.setHeaderText(null);
-        alert.setContentText("Promotion annulé");
+        alert.setContentText("Promotion annulée");
         alert.show();
           });
         

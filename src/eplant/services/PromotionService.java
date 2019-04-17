@@ -109,6 +109,45 @@ ObservableList<Promotion> list=FXCollections.observableArrayList();
         }
         return p;   
      }
+  
+ public Promotion searchPromotion(int id){
+     String req="select * from promotion where produit_id='"+id+"'"; 
+        Promotion p = new Promotion();       
+        try {
+            ResultSet rs=ste.executeQuery(req);
+            while(rs.next()){
+                p.setId(rs.getInt(1));
+                 p.setProduit_id(rs.getInt(2));
+                p.setDate_promo(rs.getDate(3).toString());
+                p.setDescription(rs.getString(6));
+                p.setReduction(rs.getInt(5));
+                p.setType(rs.getString(4));
+                p.setDate_fin(rs.getDate(7).toString());
+                return p;
+        }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(EvenementService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;   
+     }      
+ 
+ public void insertPromotion(Promotion p){
+           java.sql.Date date = java.sql.Date.valueOf(p.getDate_fin());
+       String req="INSERT INTO `promotion` (produit_id,date_promo,type,valeur,description,date_fin) "
+                    + "VALUES ('"+p.getProduit_id()+"',CURRENT_DATE,'reduction','"+p.getReduction()+"',"
+               + "'"+p.getDescription()+"','"+date+"') "; 
+                      
+       String req1 = "update produit set prix=prix-(prix*'"+p.getReduction()+"'/100) where id='"+p.getProduit_id()+"'";
+       try {
+            ste.executeUpdate(req1);
+            ste.executeUpdate(req); 
+                  
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(EvenementService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      }
       
       public void modifierPromotion(Promotion p,int oldvalue){
            java.sql.Date date = java.sql.Date.valueOf(p.getDate_fin());
@@ -127,8 +166,9 @@ ObservableList<Promotion> list=FXCollections.observableArrayList();
       }
       
       public void supprimerPromotion(Promotion p){
+           String req1 = "update produit set prix=prix/(1-('"+p.getReduction()+"')/100) where id='"+p.getProduit_id()+"'";
        String req="delete from promotion where id='"+p.getId()+"'"; 
-       String req1 = "update produit set prix=prix/(1-('"+p.getReduction()+"')/100) where id='"+p.getProduit_id()+"'";
+      
        try {
             ste.executeUpdate(req1);
             ste.executeUpdate(req);

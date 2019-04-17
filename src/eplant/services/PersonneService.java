@@ -12,6 +12,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -143,9 +144,38 @@ try {
         return list;    
     }
     
-    public ObservableList<Personne> getPersons(String nom , String prenom, int eventid){
+    
+     public List<Personne> ListParticipants1(List<Participation> part){
+    List<Personne> list=new ArrayList();  
+        for(Participation par:part){
+    String req="select * from personne where id = '"+par.getParticipant_id()+"'";
+       
+        try {
+            ResultSet rs=ste.executeQuery(req);
+            while(rs.next()){
+                Personne p=new Personne();
+                p.setId(rs.getInt(1));
+                 p.setNom(rs.getString(2));
+                p.setPrenom(rs.getString(3));
+                p.setEmail(rs.getString(4));
+                p.setPassword(rs.getString(5));
+                p.setNumtel(rs.getInt(6));
+                p.setAdresse(rs.getString(7));
+                p.setRole(rs.getString(8));
+                list.add(p);
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(EvenementService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        }
+        return list;    
+    }
+    
+    public ObservableList<Personne> getPersons(String search, int eventid){
     ObservableList<Personne> list=FXCollections.observableArrayList();  
-    String req="select * from personne p inner join participation par on p.id=par.participant_id where (p.nom like '%"+nom+"%' or p.prenom like '%"+prenom+"%') and par.evenement_id='"+eventid+"'";
+    String req="select * from personne p inner join participation par on p.id=par.participant_id where (p.nom like '%"+search+"%' or p.prenom like '%"+search+"%') and par.evenement_id='"+eventid+"'";
        
         try {
             ResultSet rs=ste.executeQuery(req);
@@ -167,6 +197,58 @@ try {
         }
         
         return list;    
+    }
+    
+    public List<Personne> getPersons1(String search, int eventid){
+      List<Personne> list=new ArrayList();  
+    String req="select * from personne p inner join participation par on p.id=par.participant_id where (p.nom like '%"+search+"%' or p.prenom like '%"+search+"%') and par.evenement_id='"+eventid+"'";
+       
+        try {
+            ResultSet rs=ste.executeQuery(req);
+            while(rs.next()){
+                Personne p=new Personne();
+                p.setId(rs.getInt(1));
+                 p.setNom(rs.getString(2));
+                p.setPrenom(rs.getString(3));
+                p.setEmail(rs.getString(4));
+                p.setPassword(rs.getString(5));
+                p.setNumtel(rs.getInt(6));
+                p.setAdresse(rs.getString(7));
+                p.setRole(rs.getString(8));
+                list.add(p);
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(EvenementService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return list;    
+    }
+    
+    public Personne personbyEmaill(String email) {
+         Personne p=new Personne();
+try {
+            
+            String req2= "select * from Personne where email = '"+email+"'";
+         
+            ResultSet res =   ste.executeQuery(req2);
+            
+            while (res.next()) {  
+             
+                p.setId(res.getInt(1));
+                 p.setNom(res.getString(2));
+                p.setPrenom(res.getString(3));
+                p.setEmail(res.getString(4));
+                p.setPassword(res.getString(5));
+                p.setNumtel(res.getInt(6));
+                p.setAdresse(res.getString(7));
+                p.setRole(res.getString(8));
+            }
+           
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+         return p;
     }
     
 }

@@ -3,17 +3,58 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/controller/CommunauteController.java</file>
-            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/view/Accueil.fxml</file>
-            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/view/FXML.fxml</file>
-            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/entities/ListEvents.java</file>
-            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/services/EvenementService.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/controller/LivraisonController.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/controller/PanierController.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/services/CommandeService.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/entities/Livraison.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/entities/Produit.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/view/AfficherReclamation.fxml</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/services/PanierService.java</file>
             <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/view/Communaute.fxml</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/services/ReclamationDao.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/view/Statsprod.fxml</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/controller/CommunauteController.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/view/PieChartView.fxml</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/view/Livraison.fxml</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/controller/LoginController.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/view/Panier.fxml</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/controller/PromotionController.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/controller/PieChartViewController.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/view/Ajoutproduit.fxml</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/controller/StatsprodController.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/controller/CommandeController.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/view/FXML.fxml</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/services/PersonneService.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/view/Store.fxml</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/controller/DetailseventsController.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/entities/Avis.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/view/Promotion.fxml</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/entities/Participation.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/services/ProduitService.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/entities/Personne.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/entities/ListEvents.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/services/AvisDao.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/controller/AccueilController.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/config/UserSession.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/view/Stat.fxml</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/controller/StatController.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/view/Commande.fxml</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/entities/Evenement.java</file>
             <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/services/PromotionService.java</file>
             <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/main/Eplants.java</file>
-            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/controller/PromotionController.java</file>
-            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/controller/AccueilController.java</file>
-            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/view/Promotion.fxml</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/services/Idao.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/controller/AfficherReclamationController.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/controller/DetailsproductsController.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/controller/SigninController.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/services/LivraisonService.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/view/Accueil.fxml</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/services/EvenementService.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/controller/AjoutproduitController.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/entities/Panier.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/entities/Commande.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/view/Detailsproducts.fxml</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/entities/ListData.java</file>
+            <file>file:/C:/Users/HP/Desktop/Eplants/src/eplant/entities/Reclamation.java</file>
         </group>
     </open-files>
 </project-private>

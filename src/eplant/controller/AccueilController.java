@@ -17,14 +17,19 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -49,10 +54,66 @@ public class AccueilController implements Initializable {
        
         @FXML
     private Button promo;
+    @FXML
+    private Button produits;
+    @FXML
+    private Button savbut;
+    @FXML
+    private Button livraisonbut;
+    @FXML
+    private Pane sidebar;
    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        UserSession session = UserSession.getInstace("", "");
         
+      
+       if("livreur".equalsIgnoreCase(session.getRole())){
+                 sidebar.getChildren().remove(promo);
+                 ap.getChildren().remove(produits);
+                 ap.getChildren().remove(savbut);
+                 ap.getChildren().remove(com);
+                  
+              }
+        if("client".equalsIgnoreCase(session.getRole())){
+                 ap.getChildren().remove(livraisonbut);
+                  
+              }
+         if("admin".equalsIgnoreCase(session.getRole())){
+                  ap.getChildren().remove(livraisonbut);
+
+              }
+       livraisonbut.setOnAction((event5) -> {
+            Parent page2;
+
+           try {
+                            page2 = FXMLLoader.load(getClass().getResource("/eplant/view/Livraison.fxml"));
+                           
+        
+                             Scene scene = new Scene(page2);
+                Stage stage = (Stage) ((Node) event5.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+                        } catch (IOException ex) {
+                            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+       });
+       
+       produits.setOnAction((event6) -> {
+            Parent page2;
+
+           try {
+                            page2 = FXMLLoader.load(getClass().getResource("/eplant/view/Store.fxml"));
+                           
+        
+                             Scene scene = new Scene(page2);
+                Stage stage = (Stage) ((Node) event6.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+                        } catch (IOException ex) {
+                            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+       });
         ap.heightProperty().addListener(new ChangeListener(){
             @Override
             public void changed(ObservableValue observable, Object oldValue, Object newValue) {
@@ -72,9 +133,43 @@ public class AccueilController implements Initializable {
         
         
         });
+        
+        savbut.setOnAction((event5) -> {
+           if("admin".equalsIgnoreCase(session.getRole())){
+                  
+                   Parent page2;
+                              
+            try {
+                            page2 = FXMLLoader.load(getClass().getResource("/eplant/view/AfficherReclamation.fxml"));
+                             Scene scene = new Scene(page2);
+                Stage stage = (Stage) ((Node) event5.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+                        } catch (IOException ex) {
+                            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+              }
+           
+           if("client".equalsIgnoreCase(session.getRole())){
+                  
+                   Parent page2;
+                              
+            try {
+                            page2 = FXMLLoader.load(getClass().getResource("/eplant/view/Acceuil.fxml"));
+                             Scene scene = new Scene(page2);
+                Stage stage = (Stage) ((Node) event5.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+                        } catch (IOException ex) {
+                            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+              }
+            
+        });
+        
        deconnect.setOnAction((event) -> {                     
            Parent page2;
-               UserSession session = UserSession.getInstace("", "");
+               
                session.cleanUserSession();
                
             try {
@@ -92,7 +187,9 @@ public class AccueilController implements Initializable {
            Parent page2;
 
            try {
-                            page2 = FXMLLoader.load(getClass().getResource("/eplant/view/Communaute.fxml"));
+                            page2 = FXMLLoader.load(getClass().getResource("/eplant/view/Communaute1.fxml"));
+                           
+        
                              Scene scene = new Scene(page2);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(scene);
@@ -101,9 +198,9 @@ public class AccueilController implements Initializable {
                             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
                         }
        });
-        UserSession session = UserSession.getInstace("", "");
         PersonneService s = new PersonneService();
        login.setText(s.SearchByMail(session.getUserName()).getPrenom());
+       
        
        promo.setOnAction((event) -> {
            Parent page2;

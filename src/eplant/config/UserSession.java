@@ -15,6 +15,8 @@ public final class UserSession {
 
     private String userName;
     private String role;
+    private int id;
+    private int indevent;
 
     private UserSession(String userName, String role) {
         this.userName = userName;
@@ -36,11 +38,23 @@ public final class UserSession {
         return role;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public void cleanUserSession() {
         userName = "";// or null
         role = "";// or null
         
         instance =null;
+    }
+
+    public int getIndevent() {
+        return indevent;
+    }
+
+    public void setIndevent(int indevent) {
+        this.indevent = indevent;
     }
 
     @Override

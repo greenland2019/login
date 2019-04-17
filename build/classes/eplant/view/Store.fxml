@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="sc" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eplant.controller.StoreController">
+   <children>
+      <ScrollPane fx:id="scrollprod" layoutY="86.0" prefHeight="273.0" prefWidth="600.0" />
+      <Text layoutX="171.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOS PRODUITS">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Button fx:id="panier" layoutX="412.0" layoutY="52.0" mnemonicParsing="false" text="Panier" />
+      <Button fx:id="stat" layoutX="33.0" layoutY="52.0" mnemonicParsing="false" text="Commandes" />
+      <Button fx:id="ajoutprod" layoutX="522.0" layoutY="361.0" mnemonicParsing="false" text="Ajouter" />
+      <Button fx:id="statprod" layoutX="33.0" layoutY="361.0" mnemonicParsing="false" text="Statistiques" />
+      <Button fx:id="back" layoutX="488.0" layoutY="51.0" mnemonicParsing="false" text="Accueil">
+         <graphic>
+            <ImageView fitHeight="17.0" fitWidth="27.0">
+               <image>
+                  <Image url="@../../images/back-button-hi.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>
