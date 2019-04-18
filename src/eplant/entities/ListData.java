@@ -24,14 +24,23 @@ public class ListData {
     
     private ObservableList<Reclamation> reclam=FXCollections.observableArrayList();
 
-    public ListData() {
-        
-        ReclamationDao pdao=ReclamationDao.getInstance();
-        reclam= pdao.displayAll();
-         System.out.println(reclam);
+    private String email="";
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
     
+    public ListData() {
+        
+            }
+    
     public ObservableList<Reclamation> getReclam(){
+        ReclamationDao pdao=ReclamationDao.getInstance();
+        reclam= pdao.displaybyEmail(email);
         return reclam;
     }
    

@@ -51,15 +51,17 @@ public class AjouterReclamationController implements Initializable {
     @FXML
     private TextField Categorie;
     @FXML
-    private JFXButton home;
+    private Button home;
     @FXML
-    private JFXButton quiz;
+    private Button quiz;
     @FXML
-    private JFXButton rating;
+    private Button rating;
     @FXML
-    private JFXButton reclamation;
+    private Button reclamation;
     @FXML
     private Pane BoutonValider;
+    @FXML
+    private Button backbutton;
     /**
      * Initializes the controller class.
      *
@@ -70,6 +72,20 @@ public class AjouterReclamationController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO     
+        backbutton.setOnMouseReleased((event) -> {
+                   Parent page2;
+                        try {
+                            
+                            page2 = FXMLLoader.load(getClass().getResource("/eplant/view/Acceuil.fxml"));
+                             Scene scene = new Scene(page2);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+                        } catch (IOException ex) {
+                            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+              });
+        
                 UserSession session = UserSession.getInstace("", "");
  email.setText(session.getUserName());
           email.setDisable(true);

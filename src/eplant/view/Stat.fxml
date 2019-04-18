@@ -8,8 +8,13 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="472.0" prefWidth="648.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eplant.controller.StatController">
+<AnchorPane id="AnchorPane" prefHeight="472.0" prefWidth="648.0" stylesheets="@test.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eplant.controller.StatController">
    <children>
+      <ImageView fitHeight="472.0" fitWidth="648.0">
+         <image>
+            <Image url="@../../images/green_background_png_606584.png" />
+         </image>
+      </ImageView>
       <BarChart fx:id="stat" layoutX="63.0" layoutY="36.0" title="Vente/M">
         <xAxis>
           <CategoryAxis label="Mois" side="BOTTOM" fx:id="x" />

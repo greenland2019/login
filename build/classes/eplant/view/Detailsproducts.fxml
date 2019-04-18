@@ -9,9 +9,14 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane id="AnchorPane" fx:id="ap" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="eplant.controller.DetailsproductsController">
+<AnchorPane id="AnchorPane" fx:id="ap" prefHeight="400.0" prefWidth="600.0" stylesheets="@test.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="eplant.controller.DetailsproductsController">
    <children>
-      <ImageView fx:id="imgp" fitHeight="158.0" fitWidth="205.0" layoutX="35.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@../../images/green-abstract-background-png-3.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgp" fitHeight="148.0" fitWidth="149.0" layoutX="91.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true" />
       <Text fx:id="nomp" layoutX="92.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" />
       <Text layoutX="14.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" wrappingWidth="72.0" />
       <TextField fx:id="descp" layoutX="92.0" layoutY="215.0" />
@@ -29,7 +34,7 @@
       <TextField fx:id="red" layoutX="439.0" layoutY="60.0" />
       <Text fx:id="promotext" layoutX="13.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="En promotion de :" />
       <Text layoutX="225.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DT" />
-      <Button fx:id="back" layoutX="494.0" layoutY="2.0" mnemonicParsing="false" text="Accueil">
+      <Button fx:id="back" layoutX="506.0" layoutY="1.0" mnemonicParsing="false" text="Accueil">
          <graphic>
             <ImageView fitHeight="17.0" fitWidth="27.0">
                <image>

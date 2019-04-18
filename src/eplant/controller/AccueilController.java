@@ -61,7 +61,15 @@ public class AccueilController implements Initializable {
     @FXML
     private Button livraisonbut;
     @FXML
-    private Pane sidebar;
+    private Text livraisontxt;
+    @FXML
+    private Text SAVtxt;
+    @FXML
+    private Text produitstxt;
+    @FXML
+    private Text comtxt;
+    @FXML
+    private Text promotionstxt;
    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -69,18 +77,24 @@ public class AccueilController implements Initializable {
         
       
        if("livreur".equalsIgnoreCase(session.getRole())){
-                 sidebar.getChildren().remove(promo);
+                 ap.getChildren().remove(promo);
                  ap.getChildren().remove(produits);
                  ap.getChildren().remove(savbut);
                  ap.getChildren().remove(com);
+                 ap.getChildren().remove(SAVtxt);
+                 ap.getChildren().remove(produitstxt);
+                 ap.getChildren().remove(promotionstxt);
+                 ap.getChildren().remove(comtxt);
                   
               }
         if("client".equalsIgnoreCase(session.getRole())){
                  ap.getChildren().remove(livraisonbut);
+                 ap.getChildren().remove(livraisontxt);
                   
               }
          if("admin".equalsIgnoreCase(session.getRole())){
                   ap.getChildren().remove(livraisonbut);
+                  ap.getChildren().remove(livraisontxt);
 
               }
        livraisonbut.setOnAction((event5) -> {

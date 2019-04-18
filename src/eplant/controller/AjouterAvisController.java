@@ -24,6 +24,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -38,28 +39,36 @@ public class AjouterAvisController implements Initializable {
     @FXML
     private Button btn;
     @FXML
-    private JFXButton btn_sad;
+    private Button btn_sad;
     @FXML
-    private JFXButton btn_happy;
+    private Button btn_happy;
     @FXML
-    private JFXButton btn_undffrent;
+    private Button btn_undffrent;
     @FXML
-    private JFXButton btn_sohappy;
+    private Button btn_sohappy;
     @FXML
-    private JFXTextArea commentaire;
+    private TextArea commentaire;
     @FXML
-    private JFXButton home;
-    @FXML
-    private JFXButton quiz;
-    @FXML
-    private JFXButton rating;
-    @FXML
-    private JFXButton reclamation;
+    private Button backbutton;
     
     
     
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
+         backbutton.setOnMouseReleased((event) -> {
+                   Parent page2;
+                        try {
+                            
+                            page2 = FXMLLoader.load(getClass().getResource("/eplant/view/Acceuil.fxml"));
+                             Scene scene = new Scene(page2);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+                        } catch (IOException ex) {
+                            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+              });
          Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Information Dialog");
         alert.setHeaderText(null);
@@ -100,7 +109,6 @@ alert.show();
         commentaire.setText("");
     }
 
-    @FXML
     private void retour(ActionEvent event) {
         try {
                 Parent page1 = FXMLLoader.load(getClass().getResource("/eplant/view/Acceuil.fxml"));
@@ -113,7 +121,6 @@ alert.show();
             }
     }
 
-    @FXML
     private void reclam(ActionEvent event) {
         try {
                 Parent page1 = FXMLLoader.load(getClass().getResource("/eplant/view/AjouterReclamation.fxml"));

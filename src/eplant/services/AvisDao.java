@@ -134,6 +134,23 @@ public class AvisDao implements Idao<Avis>{
         }
         return list;
     }
+    
+    public List<String> displayAllbyType(List<Integer> nbr) {
+        String req="select etat , count(*) as count from avis group by etat ";
+       List<String> list=new ArrayList();
+        
+        try {
+            rs=st.executeQuery(req);
+            while(rs.next()){
+               list.add(rs.getString("etat"));
+               nbr.add(rs.getInt("count"));
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AvisDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
     @Override
     public Avis displayById(int id) {
            String req="select * from avis where id ="+id;

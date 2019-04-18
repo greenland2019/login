@@ -11,19 +11,19 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="625.0" prefWidth="926.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eplant.controller.AfficherAvisController">
+<AnchorPane id="AnchorPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="511.0" prefWidth="626.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eplant.controller.AfficherAvisController">
    <children>
-      <AnchorPane layoutX="180.0" layoutY="188.0" prefHeight="480.0" prefWidth="719.0">
+      <AnchorPane layoutX="167.0" layoutY="188.0" prefHeight="305.0" prefWidth="376.0" stylesheets="@test.css">
          <children>
-            <TableView fx:id="avisTable" layoutX="91.0" layoutY="7.0" prefHeight="396.0" prefWidth="455.0">
+            <TableView fx:id="avisTable" layoutX="91.0" layoutY="7.0" prefHeight="238.0" prefWidth="313.0">
                <columns>
                   <TableColumn fx:id="EtatColonne" prefWidth="129.0" text="Etat" />
-                  <TableColumn fx:id="CommentaireColonne" prefWidth="304.0" text="Commentaire" />
+                  <TableColumn fx:id="CommentaireColonne" prefWidth="184.0" text="Commentaire" />
                </columns>
                <columnResizePolicy>
                </columnResizePolicy>
             </TableView>
-            <Button fx:id="btn_delete" layoutX="59.0" layoutY="440.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="31.0" prefWidth="130.0" text="Supprimer">
+            <Button fx:id="btn_delete" layoutX="113.0" layoutY="262.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="31.0" prefWidth="130.0" text="Supprimer">
                <graphic>
                   <ImageView fitHeight="16.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -31,33 +31,47 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button fx:id="btn_pie" layoutX="469.0" layoutY="440.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="130.0" text="Statistiques" />
+            <Button fx:id="btn_pie" layoutX="278.0" layoutY="262.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="130.0" text="Statistiques" />
          </children>
       </AnchorPane>
-      <Pane layoutY="-3.0" prefHeight="185.0" prefWidth="966.0" style="-fx-background-color: #00A388;" styleClass="head-background" stylesheets="@../../../wamp64/www/PiDev_vesion2/src/edu/pidev/Styles/AdminPanel.css">
+      <Pane layoutX="6.0" prefHeight="185.0" prefWidth="626.0" styleClass="head-background" stylesheets="@../../../wamp64/www/PiDev_vesion2/src/edu/pidev/Styles/AdminPanel.css">
          <children>
-            <Label layoutX="284.0" layoutY="59.0" text="Reclamation " textFill="WHITE">
+            <ImageView fitHeight="185.0" fitWidth="632.0" layoutX="-5.0">
+               <image>
+                  <Image url="@../../images/green-background-wallpaper-7.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="198.0" layoutY="49.0" text="SERVICE A.P" textFill="#656464">
                <font>
                   <Font name="System Bold" size="50.0" />
                </font>
             </Label>
-            <Label layoutX="284.0" layoutY="119.0" text="Bienvenue dans notre application" textFill="WHITE">
+            <Label layoutX="198.0" layoutY="95.0" stylesheets="@test.css" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Pane layoutX="69.0" layoutY="20.0" prefHeight="131.0" prefWidth="142.0" style="-fx-background-color: #fff;">
+            <Pane layoutX="29.0" layoutY="20.0" prefHeight="131.0" prefWidth="142.0" style="-fx-background-color: #fff;">
                <effect>
                   <DropShadow blurType="GAUSSIAN" height="10.0" radius="4.5" width="10.0" />
                </effect>
                <children>
-                  <ImageView fitHeight="131.0" fitWidth="153.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="131.0" fitWidth="142.0">
                      <image>
-                        <Image url="@logo.PNG" />
+                        <Image url="@../../images/2_Reglage.png" />
                      </image>
                   </ImageView>
                </children>
             </Pane>
+            <Button fx:id="backbutton" layoutX="512.0" layoutY="151.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: grey;" stylesheets="@test.css" text="ACCUEIL">
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="28.0">
+                     <image>
+                        <Image url="@../../images/back-button-hi.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </Pane>
    </children>

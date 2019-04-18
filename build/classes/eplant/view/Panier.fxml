@@ -8,8 +8,13 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eplant.controller.PanierController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@test.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eplant.controller.PanierController">
     <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@../../images/green_background_png_606584.png" />
+         </image>
+      </ImageView>
       <TableView fx:id="paniertable" layoutX="73.0" layoutY="64.0" prefHeight="273.0" prefWidth="415.0">
         <columns>
           <TableColumn fx:id="imgColonne" prefWidth="75.0" text="Produit" />
@@ -21,7 +26,7 @@
       </TableView>
       <Button fx:id="mod" layoutX="239.0" layoutY="337.0" mnemonicParsing="false" text="modifier" />
       <Button fx:id="supp" layoutX="418.0" layoutY="337.0" mnemonicParsing="false" text="supprimer" />
-      <Button fx:id="valide" layoutX="435.0" layoutY="37.0" mnemonicParsing="false" text="Valider" />
+      <Button fx:id="valide" layoutX="435.0" layoutY="36.0" mnemonicParsing="false" text="Valider" />
       <TextField fx:id="qtemod" layoutX="73.0" layoutY="337.0" promptText="modifier la qte" />
       <TextField fx:id="recherche" layoutX="187.0" layoutY="37.0" promptText="Recherche" />
       <Button fx:id="back" layoutX="501.0" layoutY="2.0" mnemonicParsing="false" text="Accueil">

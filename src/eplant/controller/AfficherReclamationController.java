@@ -72,11 +72,13 @@ public class AfficherReclamationController implements Initializable {
     @FXML
     private Button btn_pie;
     @FXML
-    private Button btn_delete;
-    @FXML
     private Button btn_mail;
     @FXML
     private Button btn_avis;
+    @FXML
+    private Button backbutton;
+    @FXML
+    private TextField searchreclam;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -107,8 +109,20 @@ public class AfficherReclamationController implements Initializable {
                 .getContenue());
         
        
-    
     });
+       
+        searchreclam.setOnKeyReleased((event) -> {
+            listdata.setEmail(searchreclam.getText());
+             reclamTable.setItems(listdata.getReclam());
+        EmailColonne.setCellValueFactory(cell -> cell.
+                getValue().getEmailProperty());
+        SujetColonne.setCellValueFactory(cell -> cell.
+                getValue().getSujetProperty());
+        ContenueColonne.setCellValueFactory(cell -> cell.
+                getValue().getContenueProperty());
+        CategorieColonne.setCellValueFactory(cell -> cell.
+                getValue().getCategorieProperty());
+        });
         //Redirection vers l'interface PieChart
         btn_pie.setOnAction(event->{
             try {
@@ -136,6 +150,20 @@ public class AfficherReclamationController implements Initializable {
                 Logger.getLogger(AfficherReclamationController.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
+         backbutton.setOnMouseReleased((event) -> {
+                   Parent page2;
+                        try {
+                            
+                            page2 = FXMLLoader.load(getClass().getResource("/eplant/view/Accueil.fxml"));
+                             Scene scene = new Scene(page2);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+                        } catch (IOException ex) {
+                            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+              });
+        
     }
 
 }

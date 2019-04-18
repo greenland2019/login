@@ -1,125 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.geometry.Insets?>
-<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="625.0" prefWidth="926.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eplant.controller.AccueilreclamController">
+<AnchorPane id="AnchorPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="405.0" prefWidth="592.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eplant.controller.AccueilreclamController">
    <children>
-      <Pane layoutX="-2.0" prefHeight="177.0" prefWidth="926.0" style="-fx-background-color: #8BC53E;" styleClass="head-background" stylesheets="@../../wamp64/www/PiDev_vesion2/src/edu/pidev/Styles/AdminPanel.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane layoutX="-2.0" prefHeight="177.0" prefWidth="592.0" styleClass="head-background" stylesheets="@../../wamp64/www/PiDev_vesion2/src/edu/pidev/Styles/AdminPanel.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="227.0" layoutY="21.0" prefHeight="83.0" prefWidth="687.0" text="Bienvenue dans notre service aprés vente ..." textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="26.0" />
-               </font>
-            </Label>
-            <Label layoutX="227.0" layoutY="100.0" text="Espace clients" textFill="WHITE" underline="true">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <VBox layoutX="-1.0" layoutY="177.0" prefHeight="448.0" prefWidth="216.0" style="-fx-background-color: #D3EDA9;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="177.0">
-         <children>
-            <JFXButton fx:id="home" alignment="BASELINE_LEFT" graphicTextGap="10.0"  prefHeight="43.0" prefWidth="222.0" ripplerFill="#bfadf8" text="Acceuil" textFill="#f80d0d">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-               <graphic>
-                  <ImageView accessibleText="Project List" fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../images/home.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-            <JFXButton fx:id="quiz" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="222.0" ripplerFill="#bfadf8" text="Quiz">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../images/quiz.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </JFXButton>
-            <JFXButton fx:id="rating" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="222.0" ripplerFill="#bfadf8" text="Rating" textFill="#5b5858">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../images/iconfinder_--03_1720778.png" />
-                     </image>
-                     <viewport>
-                        <Rectangle2D />
-                     </viewport>
-                  </ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </JFXButton>
-            <JFXButton fx:id="reclamation" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="222.0" ripplerFill="#bfadf8" text="Reclamation">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../images/edit_file.png" />
-                     </image>
-                     <viewport>
-                        <Rectangle2D />
-                     </viewport>
-                  </ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </JFXButton>
-         </children>
-      </VBox>
-      <Pane layoutX="71.0" layoutY="44.0" prefHeight="131.0" prefWidth="142.0" style="-fx-background-color: #fff;">
-         <effect>
-            <DropShadow blurType="GAUSSIAN" height="10.0" radius="4.5" width="10.0" />
-         </effect>
-         <children>
-            <ImageView depthTest="DISABLE" fitHeight="131.0" fitWidth="180.0" layoutX="5.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="177.0" fitWidth="592.0">
                <image>
-                  <Image url="@../../images/logo.PNG" />
+                  <Image url="@../../images/green-background-wallpaper-7.jpg" />
                </image>
             </ImageView>
+            <Label layoutX="187.0" layoutY="49.0" prefHeight="83.0" prefWidth="295.0" text="SERVICE A.P" textFill="#837e7e">
+               <font>
+                  <Font name="System Bold" size="50.0" />
+               </font>
+            </Label>
+            <Pane layoutX="29.0" layoutY="25.0" prefHeight="131.0" prefWidth="142.0" style="-fx-background-color: #fff;">
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" height="10.0" radius="4.5" width="10.0" />
+               </effect>
+               <children>
+                  <ImageView fitHeight="131.0" fitWidth="142.0">
+                     <image>
+                        <Image url="@../../images/2_Reglage.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Button fx:id="backbutton" layoutX="482.0" layoutY="142.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: grey;" stylesheets="@test.css" text="ACCUEIL">
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="28.0">
+                     <image>
+                        <Image url="@../../images/back-button-hi.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </Pane>
-      <Pane layoutX="306.0" layoutY="182.0" prefHeight="432.0" prefWidth="502.0" style="-fx-background-color: #D3EDA4;">
-         <effect>
-            <DropShadow color="#4d3d02" height="53.62" radius="27.792499999999997" width="59.55" />
-         </effect>
-      </Pane>
-      <AnchorPane id="AnchorPane" layoutX="324.0" layoutY="189.0" prefHeight="395.0" prefWidth="466.0" styleClass="mainFxmlClass" stylesheets="@../../../wamp64/www/EplantsFront/src/com/reclamation/view/JMetroDarkTheme.css">
+      <AnchorPane id="AnchorPane" layoutX="34.0" layoutY="194.0" prefHeight="196.0" prefWidth="466.0" styleClass="mainFxmlClass" stylesheets="@test.css">
          <children>
-            <JFXButton fx:id="btn_add_avis" layoutX="138.0" layoutY="161.0" prefHeight="66.0" prefWidth="216.0" text="Donner Avis " />
-            <JFXButton fx:id="btn_add_reclamation" layoutX="136.0" layoutY="46.0" prefHeight="66.0" prefWidth="216.0" text="Ajouter Reclamation" textOverrun="CLIP" />
-            <JFXButton fx:id="btn_quiz" layoutX="138.0" layoutY="280.0" prefHeight="74.0" prefWidth="216.0" text="Quiz" />
+            <Button fx:id="btn_add_avis" layoutX="138.0" layoutY="81.0" prefHeight="41.0" prefWidth="216.0" text="Donner Avis ">
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="34.0">
+                     <image>
+                        <Image url="@../../images/edit_file_1.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="btn_add_reclamation" layoutX="138.0" layoutY="28.0" prefHeight="41.0" prefWidth="216.0" text="Ajouter Reclamation" textOverrun="CLIP">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="47.0">
+                     <image>
+                        <Image url="@../../images/plus.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="btn_quiz" layoutX="138.0" layoutY="134.0" prefHeight="41.0" prefWidth="216.0" text="Quiz">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="42.0">
+                     <image>
+                        <Image url="@../../images/36601.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
          </children>
       </AnchorPane>
    </children>

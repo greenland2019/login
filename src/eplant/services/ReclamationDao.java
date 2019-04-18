@@ -135,6 +135,28 @@ public class ReclamationDao implements Idao<Reclamation>{
     return p;
     }
 
+     public ObservableList<Reclamation> displaybyEmail(String email) {
+        String req="select * from reclamation where email like '%"+email+"%'";
+        ObservableList<Reclamation> list=FXCollections.observableArrayList();       
+        
+        try {
+            rs=st.executeQuery(req);
+            while(rs.next()){
+                Reclamation p=new Reclamation();
+                p.setId(rs.getInt("id"));
+                p.setEmail(rs.getString("Email"));
+                p.setSujet(rs.getString("Sujet"));
+                p.setContenue(rs.getString("Contenue"));
+                p.setCategorie(rs.getString("categorie"));
+                
+                list.add(p);
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ReclamationDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
     @Override
     public boolean update(Reclamation p) {
         String qry = "UPDATE reclamation SET Email = '"+p.getEmail()+"', contenue = '"+p.getContenue()+"', categorie = '"+p.getCategorie()+"' WHERE id = "+p.getId();

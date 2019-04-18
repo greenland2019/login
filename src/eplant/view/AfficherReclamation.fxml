@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,17 +12,21 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="672.0" prefWidth="958.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eplant.controller.AfficherReclamationController">
+<AnchorPane id="AnchorPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="693.0" prefWidth="911.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eplant.controller.AfficherReclamationController">
    <children>
-      <Pane layoutX="-2.0" prefHeight="171.0" prefWidth="958.0" style="-fx-background-color: #00A388;" styleClass="head-background" stylesheets="@../../../wamp64/www/PiDev_vesion2/src/edu/pidev/Styles/AdminPanel.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane layoutX="-2.0" prefHeight="171.0" prefWidth="958.0" styleClass="head-background" stylesheets="@../../../wamp64/www/PiDev_vesion2/src/edu/pidev/Styles/AdminPanel.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="284.0" layoutY="59.0" text="Reclamation " textFill="WHITE">
+            <ImageView fitHeight="171.0" fitWidth="958.0">
+               <image>
+                  <Image url="@../../images/green-background-wallpaper-7.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="240.0" layoutY="56.0" text="SERVICE A.P" textFill="#727070">
                <font>
                   <Font name="System Bold" size="50.0" />
                </font>
             </Label>
-            <Label layoutX="284.0" layoutY="119.0" text="Bienvenue dans notre application" textFill="WHITE">
+            <Label layoutX="284.0" layoutY="119.0" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -32,13 +36,22 @@
                   <DropShadow blurType="GAUSSIAN" height="10.0" radius="4.5" width="10.0" />
                </effect>
                <children>
-                  <ImageView fitHeight="131.0" fitWidth="153.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="137.0" fitWidth="149.0" layoutX="-2.0" layoutY="-4.0">
                      <image>
-                        <Image url="@../../images/logo.PNG" />
+                        <Image url="@../../images/2_Reglage.png" />
                      </image>
                   </ImageView>
                </children>
             </Pane>
+            <Button fx:id="backbutton" layoutX="844.0" layoutY="125.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: grey;" stylesheets="@test.css" text="ACCUEIL">
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="28.0">
+                     <image>
+                        <Image url="@../../images/back-button-hi.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </Pane>
       <Label alignment="CENTER" layoutX="850.0" layoutY="647.0" prefHeight="23.0" prefWidth="108.0" text="Designed by Krizi" textFill="#aabfb9">
@@ -46,9 +59,9 @@
             <Font name="Segoe UI Bold Italic" size="12.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="71.0" layoutY="179.0" prefHeight="398.0" prefWidth="337.0">
+      <AnchorPane layoutX="71.0" layoutY="191.0" prefHeight="377.0" prefWidth="449.0" stylesheets="@test.css">
          <children>
-            <TableView fx:id="reclamTable" prefHeight="427.0" prefWidth="561.0">
+            <TableView fx:id="reclamTable" prefHeight="379.0" prefWidth="449.0">
                <columns>
                   <TableColumn fx:id="EmailColonne" prefWidth="116.0" text="Email" />
                   <TableColumn fx:id="CategorieColonne" prefWidth="111.0" text="Categorie" />
@@ -61,21 +74,26 @@
             </TableView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="632.0" layoutY="179.0" prefHeight="539.0" prefWidth="317.0">
+      <AnchorPane layoutX="533.0" layoutY="192.0" prefHeight="501.0" prefWidth="317.0" stylesheets="@test.css">
          <children>
-            <Button fx:id="btn_pie" layoutX="58.0" layoutY="456.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="166.0" text="Statistiques" />
-            <Label fx:id="EmailLabel" layoutX="22.0" layoutY="55.0" prefHeight="24.0" prefWidth="51.0" text="Email" />
-            <Label fx:id="CategorieLabel" layoutX="21.0" layoutY="98.0" text="Categorie" />
-            <Label fx:id="SujetLabel" layoutX="33.0" layoutY="135.0" text="Sujet" />
-            <Label fx:id="ContenueLabel" layoutX="20.0" layoutY="172.0" text="Contenue" />
-            <JFXTextField fx:id="EmailTF" layoutX="96.0" layoutY="42.0" />
-            <JFXTextField fx:id="CategorieTF" layoutX="95.0" layoutY="81.0" />
-            <JFXTextField fx:id="SujetTF" layoutX="94.0" layoutY="118.0" />
-            <JFXTextField fx:id="ContenueTF" layoutX="91.0" layoutY="155.0" />
-            <Button fx:id="btn_delete" layoutX="26.0" layoutY="303.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="130.0" text="Supprimer" />
+            <Button fx:id="btn_pie" layoutX="27.0" layoutY="403.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="130.0" text="Statistiques" />
+            <Label fx:id="EmailLabel" layoutX="36.0" layoutY="43.0" prefHeight="24.0" prefWidth="51.0" text="Email" />
+            <Label fx:id="CategorieLabel" layoutX="27.0" layoutY="85.0" text="Categorie" />
+            <Label fx:id="SujetLabel" layoutX="40.0" layoutY="122.0" text="Sujet" />
+            <Label fx:id="ContenueLabel" layoutX="27.0" layoutY="160.0" text="Contenue" />
+            <TextField fx:id="EmailTF" layoutX="96.0" layoutY="42.0" />
+            <TextField fx:id="CategorieTF" layoutX="95.0" layoutY="81.0" />
+            <TextField fx:id="SujetTF" layoutX="94.0" layoutY="118.0" />
+            <TextField fx:id="ContenueTF" layoutX="92.0" layoutY="156.0" />
             <Button fx:id="btn_mail" layoutX="166.0" layoutY="303.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="130.0" text="Mail" />
-            <Button fx:id="btn_avis" layoutX="166.0" layoutY="340.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="130.0" text="Avis" />
+            <Button fx:id="btn_avis" layoutX="176.0" layoutY="403.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="130.0" text="Avis" />
          </children>
       </AnchorPane>
+      <TextField fx:id="searchreclam" layoutX="64.0" layoutY="597.0" promptText="Chercher un client" />
+      <ImageView fitHeight="28.0" fitWidth="42.0" layoutX="220.0" layoutY="596.0">
+         <image>
+            <Image url="@../../images/search.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

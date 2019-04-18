@@ -143,19 +143,11 @@ public class DetailseventsController implements Initializable {
         alert.setHeaderText(null);
         alert.setContentText("Evenement supprimé");
         alert.show();
-                /* Parent page2;
 
-           try {
-                            page2 = FXMLLoader.load(getClass().getResource("/eplant/view/Communaute1.fxml"));
                             
-                             Scene scene = new Scene(page2);
-                 stage = (Stage) ((Node) event1.getSource()).getScene().getWindow();
-                stage.setScene(scene);
-                stage.show();
-                        } catch (IOException ex) {
-                            Logger.getLogger(DetailseventsController.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                  */
+                 ((Node) event1.getSource()).getScene().getWindow().hide();
+                
+                      
              });
          
            if(!s1.checkParticipation(e.getId(),p1.SearchByMail(session.getUserName()).getId())){
@@ -237,6 +229,7 @@ public class DetailseventsController implements Initializable {
                      }
                  
                  if(date2.compareTo(date1)<0){
+                     if(ev.getType().equalsIgnoreCase("Recontre") || ev.getType().equalsIgnoreCase("Exposition") || ev.getType().equalsIgnoreCase("Apprentissage")){
                  s1.update(ev);
                  
                  Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -257,7 +250,15 @@ public class DetailseventsController implements Initializable {
                         } catch (IOException ex) {
                             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
                         }
-           
+                 }
+                 else{
+                   Alert alert = new Alert(Alert.AlertType.ERROR);
+
+                        alert.setTitle("Erreur");
+        alert.setHeaderText(null);
+        alert.setContentText("Veuillez saisir un type correct");
+        alert.show();
+                 }
                  }
                  else 
                         {

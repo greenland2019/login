@@ -8,8 +8,13 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="eplant.controller.AjoutproduitController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@test.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="eplant.controller.AjoutproduitController">
    <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@../../images/green-abstract-background-png-3.png" />
+         </image>
+      </ImageView>
       <Text layoutX="79.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" />
       <TextField fx:id="nomp" layoutX="135.0" layoutY="121.0" />
       <Text layoutX="62.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />

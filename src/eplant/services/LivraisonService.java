@@ -55,7 +55,8 @@ public class LivraisonService {
                 p.setId(rs.getInt(1));
                 p.setLivreur_id(rs.getInt(2));
                 p.setCommande_id(rs.getInt(3));
-                p.setEtat(rs.getString(4));
+                p.setAddresse(rs.getString(4));
+                p.setEtat(rs.getString(5));
                
                 
                 list.add(p);

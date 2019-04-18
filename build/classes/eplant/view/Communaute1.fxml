@@ -17,16 +17,20 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" fx:id="apcom" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="eplant.controller.CommunauteController">
+<AnchorPane id="AnchorPane" fx:id="apcom" prefHeight="400.0" prefWidth="600.0" stylesheets="@test.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eplant.controller.CommunauteController">
    <children>
+      <ImageView fitHeight="401.0" fitWidth="600.0">
+         <image>
+            <Image url="@../../images/wallpaper.wiki-Cool-nature-photos-desktop-background-1-PIC-WPD0010134.jpg" />
+         </image>
+      </ImageView>
       <TabPane fx:id="tab" layoutY="33.0" prefHeight="368.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Evenements">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ScrollPane fx:id="scrollEvent" layoutY="105.0" prefHeight="269.0" prefWidth="600.0" />
+                        <ScrollPane fx:id="scrollEvent" layoutY="105.0" prefHeight="237.0" prefWidth="600.0" />
                         <ImageView fitHeight="60.0" fitWidth="600.0">
                            <image>
                               <Image url="@../../images/black.png" />
@@ -48,11 +52,6 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ImageView fitHeight="375.0" fitWidth="600.0">
-                           <image>
-                              <Image url="@../../images/makro-rastenie-list-razmytost-macro-plant-leaf-bokeh.jpg" />
-                           </image>
-                        </ImageView>
                         <AnchorPane fx:id="ap2" minHeight="0.0" minWidth="0.0" prefHeight="340.0" prefWidth="600.0">
                            <children>
                               <Pane layoutX="214.0" layoutY="20.0" prefHeight="273.0" prefWidth="378.0">
@@ -89,11 +88,6 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ImageView fitHeight="375.0" fitWidth="600.0">
-                           <image>
-                              <Image url="@../../images/makro-rastenie-list-razmytost-macro-plant-leaf-bokeh.jpg" />
-                           </image>
-                        </ImageView>
                         <AnchorPane fx:id="ap21" layoutX="-2.0" minHeight="0.0" minWidth="0.0" prefHeight="347.0" prefWidth="608.0">
                            <children>
                               <Pane layoutX="46.0" layoutY="31.0" prefHeight="243.0" prefWidth="353.0">
@@ -111,7 +105,7 @@
                                     <ComboBox fx:id="comotype" layoutX="122.0" layoutY="109.0" prefWidth="150.0" />
                                  </children>
                               </Pane>
-                              <Button fx:id="ajout" layoutX="238.0" layoutY="294.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Ajouter" />
+                              <Button fx:id="ajout" layoutX="509.0" layoutY="306.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Ajouter" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -120,9 +114,9 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Button fx:id="backbutton" layoutX="482.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="119.0" text="ACCUEIL">
+      <Button fx:id="backbutton" layoutX="484.0" layoutY="1.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="ACCUEIL">
          <graphic>
-            <ImageView fitHeight="24.0" fitWidth="37.0">
+            <ImageView fitHeight="18.0" fitWidth="28.0">
                <image>
                   <Image url="@../../images/back-button-hi.png" />
                </image>

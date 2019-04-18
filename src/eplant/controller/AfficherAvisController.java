@@ -53,20 +53,27 @@ public class AfficherAvisController implements Initializable {
     @FXML
     private Button btn_pie;
     @FXML
-    private JFXButton home;
-    @FXML
-    private JFXButton quiz;
-    @FXML
-    private JFXButton rating;
-    @FXML
-    private JFXButton reclamation;
-    @FXML
     private Button btn_delete;
+    @FXML
+    private Button backbutton;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
 
+         backbutton.setOnMouseReleased((event) -> {
+                   Parent page2;
+                        try {
+                            
+                            page2 = FXMLLoader.load(getClass().getResource("/eplant/view/AfficherReclamation.fxml"));
+                             Scene scene = new Scene(page2);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+                        } catch (IOException ex) {
+                            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+              });
         avisTable.setItems(listdata.getAvis());
         EtatColonne.setCellValueFactory(cell -> cell.
                 getValue().getEtatProperty());
@@ -138,7 +145,6 @@ public class AfficherAvisController implements Initializable {
 
     }
 
-    @FXML
     private void retour(ActionEvent event) {
         try {
                 Parent page1 = FXMLLoader.load(getClass().getResource("/eplant/view/Acceuil.fxml"));

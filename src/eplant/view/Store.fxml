@@ -8,19 +8,31 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" fx:id="sc" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eplant.controller.StoreController">
+<AnchorPane id="AnchorPane" fx:id="sc" prefHeight="400.0" prefWidth="600.0" stylesheets="@test.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eplant.controller.StoreController">
    <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@../../images/Field_in_Kärkölä.jpg" />
+         </image>
+      </ImageView>
       <ScrollPane fx:id="scrollprod" layoutY="86.0" prefHeight="273.0" prefWidth="600.0" />
       <Text layoutX="171.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOS PRODUITS">
          <font>
             <Font size="30.0" />
          </font>
       </Text>
-      <Button fx:id="panier" layoutX="412.0" layoutY="52.0" mnemonicParsing="false" text="Panier" />
+      <Button fx:id="panier" layoutX="421.0" layoutY="51.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="51.0">
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="45.0">
+               <image>
+                  <Image url="@../../images/basket1.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
       <Button fx:id="stat" layoutX="33.0" layoutY="52.0" mnemonicParsing="false" text="Commandes" />
       <Button fx:id="ajoutprod" layoutX="522.0" layoutY="361.0" mnemonicParsing="false" text="Ajouter" />
       <Button fx:id="statprod" layoutX="33.0" layoutY="361.0" mnemonicParsing="false" text="Statistiques" />
-      <Button fx:id="back" layoutX="488.0" layoutY="51.0" mnemonicParsing="false" text="Accueil">
+      <Button fx:id="back" layoutX="508.0" layoutY="52.0" mnemonicParsing="false" text="Accueil">
          <graphic>
             <ImageView fitHeight="17.0" fitWidth="27.0">
                <image>
